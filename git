@@ -1,0 +1,46 @@
+[1mdiff --git a/CMakeLists.txt b/CMakeLists.txt[m
+[1mindex a462bd8..24f1bb9 100644[m
+[1m--- a/CMakeLists.txt[m
+[1m+++ b/CMakeLists.txt[m
+[36m@@ -102,7 +102,7 @@[m [mfind_package(catkin REQUIRED COMPONENTS[m
+ ## CATKIN_DEPENDS: catkin_packages dependent projects also need[m
+ ## DEPENDS: system dependencies of this project that dependent projects also need[m
+ catkin_package([m
+[31m-#  INCLUDE_DIRS include[m
+[32m+[m[32m  INCLUDE_DIRS include[m
+ #  LIBRARIES publisher_package[m
+ #  CATKIN_DEPENDS roscpp std_msgs[m
+ #  DEPENDS system_lib[m
+[36m@@ -115,7 +115,7 @@[m [mcatkin_package([m
+ ## Specify additional locations of header files[m
+ ## Your package locations should be listed before other locations[m
+ include_directories([m
+[31m-# include[m
+[32m+[m[32m include[m
+   ${catkin_INCLUDE_DIRS}[m
+ )[m
+ [m
+[1mdiff --git a/package.xml b/package.xml[m
+[1mindex 8c80572..4f3a3ae 100644[m
+[1m--- a/package.xml[m
+[1m+++ b/package.xml[m
+[36m@@ -57,6 +57,7 @@[m
+   <exec_depend>std_msgs</exec_depend>[m
+ [m
+ [m
+[32m+[m
+   <!-- The export tag contains other, unspecified, tags -->[m
+   <export>[m
+     <!-- Other tools can request additional information be placed here -->[m
+[1mdiff --git a/src/publisher_code.cpp b/src/publisher_code.cpp[m
+[1mindex 9047bba..0b0ec8b 100644[m
+[1m--- a/src/publisher_code.cpp[m
+[1m+++ b/src/publisher_code.cpp[m
+[36m@@ -1,6 +1,6 @@[m
+ #include "ros/ros.h"[m
+ #include "std_msgs/String.h"[m
+[31m-[m
+[32m+[m[32m#include “publisher_package/topic_name.h”[m
+ #include <sstream>[m
+ [m
+ /**[m
